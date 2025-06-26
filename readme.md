@@ -1,22 +1,34 @@
-FACEBOOK VIDEO DOWNLOADER (PENGUNDUH VIDEO FACEBOOK)
-====================================================
+# 📥 Facebook Video Downloader (Pengunduh Video Facebook)
 
-Sebuah aplikasi web sederhana yang dibangun dengan Python dan Flask untuk mengunduh video publik dari Facebook. Aplikasi ini menyediakan antarmuka web yang modern dan responsif serta sebuah API JSON untuk integrasi lebih lanjut.
+Sebuah aplikasi web sederhana yang dibangun dengan **Python** dan **Flask** untuk mengunduh video publik dari Facebook. Aplikasi ini menyediakan antarmuka web modern dan responsif, serta sebuah **API JSON** untuk integrasi lebih lanjut.
 
-Screenshot Aplikasi:
-https://ik.imagekit.io/bly37h3bc/nyan_1750939759628_fEqys_WUn.jpg
+![Screenshot Aplikasi](https://ik.imagekit.io/bly37h3bc/nyan_1750939759628_fEqys_WUn.jpg)
 
-FITUR
------
-- Antarmuka Web Modern: Tampilan bersih dan responsif dengan animasi latar belakang.
-- API JSON Fleksibel: Endpoint /download yang mengembalikan informasi video dalam format JSON.
-- Pengambilan Data Otomatis: Mendapatkan judul, nama uploader, dan thumbnail dari video.
-- Backend Andal: Menggunakan pustaka yt-dlp yang terus diperbarui.
-- Ringan dan Mudah Dijalankan: Dibangun dengan Flask, micro-framework Python.
+---
 
-STRUKTUR PROYEK
----------------
-/proyek-downloader
+## 🚀 Fitur
+
+- 🎨 **Antarmuka Web Modern**  
+  Tampilan bersih dan responsif dengan animasi latar belakang.
+
+- 🔌 **API JSON Fleksibel**  
+  Endpoint `/download` yang mengembalikan informasi video dalam format JSON.
+
+- 🧠 **Pengambilan Data Otomatis**  
+  Mendapatkan judul, nama uploader, dan gambar thumbnail dari video.
+
+- 🔧 **Backend Andal**  
+  Menggunakan pustaka `yt-dlp` yang selalu diperbarui untuk mendukung perubahan dari Facebook.
+
+- ⚡ **Ringan dan Mudah Dijalankan**  
+  Dibangun dengan Flask, sebuah micro-framework Python.
+
+---
+
+## 🗂️ Struktur Proyek
+
+```
+proyek-downloader/
 ├── app.py              # Backend Flask (API & Web Server)
 ├── requirements.txt    # Daftar pustaka Python
 ├── templates/
@@ -24,62 +36,110 @@ STRUKTUR PROYEK
 └── static/
     ├── style.css       # Styling tampilan
     └── script.js       # Logika frontend
+```
 
-CARA INSTALASI
---------------
-1. Dapatkan File Proyek
-   git clone https://url-repositori-anda.git
-   cd nama-direktori-proyek
+---
 
-2. Buat File requirements.txt
-   Isi dengan:
-   Flask
-   yt-dlp
+## ⚙️ Instalasi
 
-3. Buat dan Aktifkan Virtual Environment
-   python3 -m venv venv
-   source venv/bin/activate   # Linux/macOS
-   venv\Scripts\activate    # Windows
+### 1. Clone Proyek
 
-4. Instal Pustaka
-   pip install -r requirements.txt
+```bash
+git clone https://url-repositori-anda.git
+cd nama-direktori-proyek
+```
 
-CARA PEMAKAIAN
---------------
-1. Jalankan Server Flask
-   python app.py
+### 2. Buat `requirements.txt`
 
-   Output:
-   * Running on http://127.0.0.1:5000
+Isi dengan:
 
-2. Gunakan Antarmuka Web
-   Buka browser dan akses:
-   http://127.0.0.1:5000/
-   Masukkan URL video Facebook dan klik "Dapatkan Video".
+```
+Flask
+yt-dlp
+```
 
-3. (Opsional) Gunakan API Langsung
-   - Endpoint: GET /download
-   - Parameter: url (URL video Facebook)
-   - Contoh: http://127.0.0.1:5000/download?url=https://facebook.com/watch?v=...
+### 3. Buat dan Aktifkan Virtual Environment
 
-   Contoh Respons Sukses:
-   {
-     "success": true,
-     "title": "Judul Video Keren",
-     "uploader": "Nama Halaman Facebook",
-     "thumbnail_url": "https://url.ke/thumbnail.jpg",
-     "download_url": "https://url.video/unduhan.mp4",
-     "extension": "mp4"
-   }
+```bash
+# Buat virtual environment
+python3 -m venv venv
 
-   Contoh Respons Gagal:
-   {
-     "success": false,
-     "error": "Gagal memproses video. Pastikan URL valid dan video bersifat publik."
-   }
+# Aktifkan (Linux/macOS)
+source venv/bin/activate
 
-TEKNOLOGI YANG DIGUNAKAN
-------------------------
-- Backend: Python, Flask
-- Video Processing: yt-dlp
-- Frontend: HTML5, CSS3, JavaScript (Vanilla)
+# Aktifkan (Windows)
+venv\Scripts\activate
+```
+
+### 4. Install Dependensi
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## ▶️ Cara Penggunaan
+
+### 1. Jalankan Server
+
+```bash
+python app.py
+```
+
+Akses melalui: [http://127.0.0.1:5000](http://127.0.0.1:5000)
+
+### 2. Gunakan Antarmuka Web
+
+- Masukkan URL video Facebook ke kolom input.
+- Klik tombol **"Dapatkan Video"**.
+- Informasi dan tautan unduh akan muncul jika berhasil.
+
+### 3. Gunakan API Secara Langsung (Opsional)
+
+Endpoint:
+```
+GET /download?url=https://www.facebook.com/watch?v=...
+```
+
+Contoh Respons Sukses:
+
+```json
+{
+  "success": true,
+  "title": "Judul Video Keren",
+  "uploader": "Nama Halaman Facebook",
+  "thumbnail_url": "https://url.ke/thumbnail.jpg",
+  "download_url": "https://url.video/unduhan.mp4",
+  "extension": "mp4"
+}
+```
+
+Contoh Respons Gagal:
+
+```json
+{
+  "success": false,
+  "error": "Gagal memproses video. Pastikan URL valid dan video bersifat publik."
+}
+```
+
+---
+
+## 🧰 Teknologi yang Digunakan
+
+- **Backend**: Python, Flask  
+- **Video Processing**: yt-dlp  
+- **Frontend**: HTML5, CSS3, JavaScript (Vanilla)
+
+---
+
+## 📄 Lisensi
+
+Proyek ini dirilis di bawah lisensi MIT. Bebas digunakan untuk proyek pribadi, edukasi, atau pengembangan lebih lanjut.
+
+---
+
+## 🙋 Kontributor
+
+- **Developer**: [@Ogya (NyanDrive)](https://nyanhosting.id)
