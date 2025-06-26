@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengunduh Video Facebook</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="background-animation"></div>
+
+    <main class="container">
+        <header>
+            <h1>Pengunduh Video Facebook</h1>
+            <p>Tempelkan URL video Facebook di bawah ini untuk mendapatkan tautan unduhan.</p>
+        </header>
+
+        <form id="url-form">
+            <input type="url" id="fb-url" placeholder="Contoh: https://www.facebook.com/watch?v=..." required>
+            <button type="submit" id="submit-btn">Dapatkan Video</button>
+        </form>
+
+        <div id="loader" class="loader" style="display: none;"></div>
+
+        <div id="result" class="result-card" style="display: none;"></div>
+        
+    </main>
+
+    <footer>
+        <p>Dibuat dengan Flask & Vanilla JS</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
